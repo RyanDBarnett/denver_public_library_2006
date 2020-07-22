@@ -18,6 +18,12 @@ class Library
   end
 
   def checkout book
-    @books.include?(book)
+    if(@books.include?(book))
+      @checked_out_books << book
+      @books = @books - [book]
+      true
+    else
+      false
+    end
   end
 end
