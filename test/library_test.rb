@@ -25,6 +25,10 @@ class LibraryTest < Minitest::Test
     assert_equal [], @library.authors
   end
 
+  def test_no_checked_out_books_by_default
+    assert_equal [], @library.checked_out_books
+  end
+
   def test_add_author
     charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
     harper_lee = Author.new({first_name: "Harper", last_name: "Lee"})
