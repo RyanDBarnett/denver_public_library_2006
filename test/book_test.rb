@@ -16,4 +16,8 @@ class BookTest < Minitest::Test
     assert_instance_of Book, @book
   end
 
+  def test_it_has_a_title
+    assert_equal "To Kill a Mockingbird", @book.title
+  end
+
 end
