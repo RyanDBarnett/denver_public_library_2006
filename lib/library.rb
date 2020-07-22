@@ -15,4 +15,8 @@ class Library
     pub_years = author.books.map(&:publication_year)
     {start: pub_years.min, end: pub_years.max}
   end
+
+  def checkout book
+    @books.include?(book)
+  end
 end
