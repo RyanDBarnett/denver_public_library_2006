@@ -25,6 +25,7 @@ class AuthorTest < Minitest::Test
 
     assert_instance_of Book, jane_eyre
     assert_equal "Jane Eyre", jane_eyre.title
+    assert_equal "1847", jane_eyre.publication_year
   end
 
   def test_write_adds_the_new_book_to_authors_books
