@@ -12,4 +12,8 @@ class LibraryTest < Minitest::Test
   def test_it_exists
     assert_instance_of Library, @library
   end
+
+  def test_name
+    assert_equal "Denver Public Library", @library.name
+  end
 end
