@@ -15,4 +15,8 @@ class AuthorTest < Minitest::Test
   def test_name
     assert_equal "Charlotte Bronte", @author.name
   end
+
+  def test_books_should_be_empty_by_default
+    assert_equal [], @author.books
+  end
 end
