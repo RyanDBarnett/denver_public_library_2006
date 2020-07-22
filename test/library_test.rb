@@ -24,4 +24,21 @@ class LibraryTest < Minitest::Test
   def test_no_authors_by_default
     assert_equal [], @library.authors
   end
+
+  def test_add_author
+    charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
+    harper_lee = Author.new({first_name: "Harper", last_name: "Lee"})
+
+    jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+    professor = charlotte_bronte.write("The Professor", "1857")
+    villette = charlotte_bronte.write("Villette", "1853")
+
+    mockingbird = harper_lee.write("To Kill a Mockingbird", "July 11, 1960")
+
+    @library.add_author(charlotte_bronte)
+    @library.add_author(harper_lee)
+
+    assert_equal [charlotte_bronte, harper_lee], @library.authors
+    assert_equal [jane_eyre, professor, villette, mockingbird], @library.books
+  end
 end
