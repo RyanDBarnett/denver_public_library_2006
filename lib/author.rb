@@ -17,7 +17,7 @@ class Author
       author_first_name: @first_name,
       author_last_name: @last_name,
       title: title,
-      publication_data: date
+      publication_date: date
     })
     @books << new_book
     new_book
