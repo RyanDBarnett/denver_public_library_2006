@@ -20,4 +20,8 @@ class LibraryTest < Minitest::Test
   def test_no_books_by_default
     assert_equal [], @library.books
   end
+
+  def test_no_authors_by_default
+    assert_equal [], @library.authors
+  end
 end
