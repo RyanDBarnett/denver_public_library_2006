@@ -53,7 +53,7 @@ class LibraryTest < Minitest::Test
     @library.add_author(charlotte_bronte)
     @library.add_author(harper_lee)
 
-    assert_equal {:start=>"1847", :end=>"1857"}, @library.publication_time_frame_for(charlotte_bronte)
-    assert_equal {:start=>"1960", :end=>"1960"}, @library.publication_time_frame_for(harper_lee)
+    assert_equal({:start=>"1847", :end=>"1857"}, @library.publication_time_frame_for(charlotte_bronte))
+    assert_equal({:start=>"1960", :end=>"1960"}, @library.publication_time_frame_for(harper_lee))
   end
 end
