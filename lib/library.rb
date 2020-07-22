@@ -5,4 +5,9 @@ class Library
     @books = []
     @authors = []
   end
+
+  def add_author author
+    @authors << author
+    @books = @books.concat(author.books)
+  end
 end
