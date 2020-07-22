@@ -16,4 +16,8 @@ class LibraryTest < Minitest::Test
   def test_name
     assert_equal "Denver Public Library", @library.name
   end
+
+  def test_no_books_by_default
+    assert_equal [], @library.books
+  end
 end
