@@ -112,4 +112,20 @@ class LibraryTest < Minitest::Test
     assert_equal true, @library.checkout(jane_eyre)
     assert_equal false, @library.checkout(jane_eyre)
   end
+
+  def test_can_return_a_checked_out_book
+    charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
+
+    jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+
+    @library.add_author(charlotte_bronte)
+
+    @library.checkout(jane_eyre)
+
+    assert_equal [jane_eyre], @library.checked_out_books
+
+    @library.return(jane_eyre)
+
+    assert_equal [], @library.checked_out_books
+  end
 end
