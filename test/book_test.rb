@@ -20,4 +20,7 @@ class BookTest < Minitest::Test
     assert_equal "To Kill a Mockingbird", @book.title
   end
 
+  def test_it_has_an_author
+    assert_equal "Harper Lee", @book.author
+  end
 end
